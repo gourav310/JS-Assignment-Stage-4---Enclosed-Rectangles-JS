@@ -45,7 +45,7 @@ function relative(recA,recB){
 	if(recB.left){
 		res.left= `${recAn.y2-recBn.y2}px`
 	}
-
+	return res;
 }
 function contains(recA,recB){
 	const recAn= normalize(recA);
