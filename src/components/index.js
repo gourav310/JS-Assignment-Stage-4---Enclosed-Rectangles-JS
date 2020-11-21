@@ -25,13 +25,13 @@ function relative(recA,recB){
 	const recBn = normalize(recB);
 
 	const res ={
-		children:recB.children
+		children : recB.children
 	}
 	if(recB.top){
 		res.top= `${recBn.x1-recAn.x1}px`;
 	}
 	if(recB.left){
-		res.left= `${recBn.y1-recAn.y2}px`;
+		res.left= `${recBn.y1-recAn.y1}px`;
 	}
 	if(recB.height){
 		res.height = recB.height;
@@ -50,12 +50,14 @@ function relative(recA,recB){
 function contains(recA,recB){
 	const recAn= normalize(recA);
 	const recBn = normalize(recB);
-	if (recAn.x1 <= recBn.x1
+	if( recAn.x1 <= recBn.x1
 		&& recAn.y1 <= recBn.y1 
 		&& recAn.x2 >= recBn.x2
 		&& recAn.y2 >= recBn.y2
-		){return true}
-	else { return false}	
+		){
+			return true;
+		}
+     return false;	
 }
 const W= 0;
 const T=0;
